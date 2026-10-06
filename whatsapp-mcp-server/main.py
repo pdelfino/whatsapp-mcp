@@ -154,7 +154,9 @@ def get_message_context(
     context = whatsapp_get_message_context(message_id, before, after)
     return context
 
-@mcp.tool()
+# READ-ONLY MODE (life-ops#333): sending disabled. Re-enable by
+# uncommenting the @mcp.tool() decorator below.
+# @mcp.tool()
 def send_message(
     recipient: str,
     message: str
@@ -183,7 +185,8 @@ def send_message(
         "message": status_message
     }
 
-@mcp.tool()
+# READ-ONLY MODE (life-ops#333): sending disabled.
+# @mcp.tool()
 def send_file(recipient: str, media_path: str) -> Dict[str, Any]:
     """Send a file such as a picture, raw audio, video or document via WhatsApp to the specified recipient. For group messages use the JID.
     
@@ -203,7 +206,8 @@ def send_file(recipient: str, media_path: str) -> Dict[str, Any]:
         "message": status_message
     }
 
-@mcp.tool()
+# READ-ONLY MODE (life-ops#333): sending disabled.
+# @mcp.tool()
 def send_audio_message(recipient: str, media_path: str) -> Dict[str, Any]:
     """Send any audio file as a WhatsApp audio message to the specified recipient. For group messages use the JID. If it errors due to ffmpeg not being installed, use send_file instead.
     
